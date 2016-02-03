@@ -57,6 +57,9 @@ syntax match   dartSpecialChar   contained "\\\(u\x\{4\}\|u{\x\+}\|x\x\x\|x{\x\+
 " Numbers
 syntax match dartNumber         "\<\d\+\(\.\d\+\)\=\>"
 
+" Annotations
+syntax match dartAnnotations    "@[a-zA-Z_$][a-zA-Z0-9_$]*"
+
 " TODO(antonm): consider conditional highlighting of corelib classes.
 syntax keyword dartCoreClasses    BidirectionalIterator Comparable DateTime Duration Expando Function Invocation Iterable Iterator List Map Match Object Pattern RegExp RuneIterator Runes Set StackTrace Stopwatch String StringBuffer StringSink Symbol Type
 syntax keyword dartCoreTypedefs   Comparator
@@ -97,6 +100,7 @@ highlight default link dartLibrary         Include
 highlight default link dartCoreClasses     Type
 highlight default link dartCoreTypedefs    Typedef
 highlight default link dartCoreExceptions  Exception
+highlight default link dartAnnotations     Special
 
 let b:current_syntax = "dart"
 let b:spell_options = "contained"
